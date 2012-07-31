@@ -3,15 +3,11 @@ using log4net;
 
 namespace HelloWorld
 {
-    public class EndpointConfig : IConfigureThisEndpoint, IWantToRunAtStartup
+    public class EndpointConfig : IConfigureThisEndpoint, AsA_Client, IWantCustomLogging
     {
-        public void Run()
+        public void Init()
         {
-            LogManager.GetLogger(GetType()).Info("Hello World!");
-        }
-
-        public void Stop()
-        {
+            SetLoggingLibrary.Log4Net(log4net.Config.XmlConfigurator.Configure);
         }
     }
 }
