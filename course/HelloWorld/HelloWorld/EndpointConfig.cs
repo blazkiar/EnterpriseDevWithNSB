@@ -9,7 +9,8 @@ namespace HelloWorld
         {
             NServiceBus.Configure.With()
                 .DefaultBuilder()
-                .XmlSerializer("http://acme.com/");
+                .XmlSerializer("http://acme.com/")
+                .RijndaelEncryptionService();
         }
     }
 }
