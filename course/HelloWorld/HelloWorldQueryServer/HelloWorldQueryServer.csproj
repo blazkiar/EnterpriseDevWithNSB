@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{58DFE402-C2DE-41F1-A3E7-AB18972B8034}</ProjectGuid>
+    <ProjectGuid>{71909173-4F34-4EF9-B29E-3F4769947427}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HelloWorldServer</RootNamespace>
-    <AssemblyName>HelloWorldServer</AssemblyName>
+    <RootNamespace>HelloWorldQueryServer</RootNamespace>
+    <AssemblyName>HelloWorldQueryServer</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -52,22 +52,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Auth.cs" />
     <Compile Include="EndpointConfig.cs" />
-    <Compile Include="ISaySomething.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RequestHandler.cs" />
-    <Compile Include="RequestWithResponseHandler.cs" />
-    <Compile Include="SaySomething.cs" />
+    <Compile Include="QueryHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Messages\Messages.csproj">
       <Project>{79D6E5E4-A15E-4058-B406-EB09B9DA952C}</Project>
       <Name>Messages</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SecurityServiceAdapter\SecurityServiceAdapter.csproj">
-      <Project>{6C90EC87-8247-4529-9F39-7052E6842999}</Project>
-      <Name>SecurityServiceAdapter</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
