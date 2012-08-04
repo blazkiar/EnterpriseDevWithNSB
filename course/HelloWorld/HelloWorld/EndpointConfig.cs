@@ -3,12 +3,16 @@ using log4net;
 
 namespace HelloWorld
 {
-    public class EndpointConfig : IConfigureThisEndpoint, AsA_Client, IWantCustomInitialization
+    public class EndpointConfig : IConfigureThisEndpoint, IWantToRunAtStartup
     {
-        public void Init()
+        public void Run()
         {
-            NServiceBus.Configure.With()
-                .DefaultBuilder();
+            LogManager.GetLogger("Class1").Info("Hello World!");
+
+        }
+
+        public void Stop()
+        {
         }
     }
 }
