@@ -48,7 +48,6 @@ namespace MvcApplication1
                     .InMemoryFaultManagement()
                     .MsmqTransport()
                     .UnicastBus()
-                    .DoNotAutoSubscribe()
                     .CreateBus()
                     .Start(() => Configure.Instance
                     .ForInstallationOn<Windows>().Install());
