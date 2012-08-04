@@ -8,8 +8,7 @@ namespace HelloWorld
         public void Init()
         {
             NServiceBus.Configure.With()
-                .DefaultBuilder()
-                .XmlSerializer("http://acme.com/");
+                .DefaultBuilder();
         }
     }
 }
