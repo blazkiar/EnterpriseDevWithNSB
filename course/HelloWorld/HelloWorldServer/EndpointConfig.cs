@@ -12,11 +12,7 @@ namespace HelloWorldServer
         {
             NServiceBus.Configure.With()
                 .DefaultBuilder()
-                .XmlSerializer("http://acme.com")
-                .RunCustomAction(() =>
-                                 Configure.Instance.Configurer.ConfigureComponent<SaySomething>(
-                                     DependencyLifecycle.SingleInstance)
-                );
+                .XmlSerializer("http://acme.com");
         }
 
         public void SpecifyOrder(Order order)
