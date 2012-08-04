@@ -3,21 +3,13 @@ using Messages;
 
 namespace MvcApplication1.Controllers
 {
-    public class SaySomethingController : AsyncController
+    public class SaySomethingController : Controller
     {
-        [AsyncTimeout(50000)]
-        public void IndexAsync()
+        public ActionResult Index()
         {
-            MvcApplication.Bus.Send<RequestWithResponse>(m => m.SaySomething = "Say 'WebApp' 1.")
-                .Register<int>(response =>
-                                   {
-                                       AsyncManager.Parameters["response"] = response.ToString();
-                                   });
-        }
+            MvcApplication.Bus.Send<Request>(m => m.SaySomething = "Say 'WebApp'.");
 
-        public ActionResult IndexCompleted(string response)
-        {
-            return new ContentResult {Content = "Response from server - " + response};
+            return new ContentResult { Content = "Message sent" };
         }
     }
 }

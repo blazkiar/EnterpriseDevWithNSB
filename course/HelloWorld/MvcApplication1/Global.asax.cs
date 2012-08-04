@@ -45,12 +45,10 @@ namespace MvcApplication1
                     .DefaultBuilder()
                     .RijndaelEncryptionService()
                     .XmlSerializer("http://acme.com")
-                    .InMemoryFaultManagement()
                     .MsmqTransport()
                     .UnicastBus()
-                    .CreateBus()
-                    .Start(() => Configure.Instance
-                    .ForInstallationOn<Windows>().Install());
+                    .SendOnly();
+
 
         }
     }
