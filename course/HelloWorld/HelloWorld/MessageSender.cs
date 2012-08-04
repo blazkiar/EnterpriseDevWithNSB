@@ -12,7 +12,7 @@ namespace HelloWorld
         {
             var message = new Request { SaySomething = "Say something" };
             Bus.Send(message);
-            LogManager.GetLogger("MessageSender").Info("Sent message.");
+            LogManager.GetLogger("helloWorldServer", "MessageSender").Info("Sent message.");
         }
 
         public void Stop()
