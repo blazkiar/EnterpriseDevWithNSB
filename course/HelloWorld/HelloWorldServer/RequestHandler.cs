@@ -14,8 +14,8 @@ namespace HelloWorldServer
 
         public void Handle(Request message)
         {
-            LogManager.GetLogger("RequestHandler").Info(message.SaySomething.Value);
-            LogManager.GetLogger("RequestHandler").Info(saysSomething.InResponseTo(message.SaySomething.Value));
+            LogManager.GetLogger("RequestHandler").Info(message.SaySomething);
+            LogManager.GetLogger("RequestHandler").Info(saysSomething.InResponseTo(message.SaySomething));
         }
     }
 }

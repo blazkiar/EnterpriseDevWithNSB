@@ -14,9 +14,9 @@ namespace HelloWorldServer
                 .DefaultBuilder()
                 .XmlSerializer("http://acme.com")
                 .RunCustomAction(() =>
-                    Configure.Instance.Configurer.ConfigureComponent<SaySomething>(DependencyLifecycle.SingleInstance)
-                )
-                .RijndaelEncryptionService();
+                                 Configure.Instance.Configurer.ConfigureComponent<SaySomething>(
+                                     DependencyLifecycle.SingleInstance)
+                );
         }
 
         public void SpecifyOrder(Order order)
